@@ -1,5 +1,5 @@
 // USER LOGIN / SIGNUP
-
+ let Users = []
 // HTML VARIABLES
 let signInBtn = document.getElementById('sign-in-btn');
 let signUpBtn = document.getElementById('sign-up-btn');
