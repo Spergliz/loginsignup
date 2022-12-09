@@ -1,32 +1,51 @@
 // USER LOGIN / SIGNUP
- let Users = []
+let Users = loadUser();
 // HTML VARIABLES
-let signInBtn = document.getElementById('sign-in-btn');
-let signUpBtn = document.getElementById('sign-up-btn');
-let UsernameE1 = document.getElementById('usersignup')
-let passwordE1 = document.getElementById('Userpassword')
-let passwordC = document.getElementById('passwordC')
-let usernameE2 = document.getElementById ('userlogin') 
-let passwordE2 = document.getElementById ('passlogin') 
+let signInBtn = document.getElementById("sign-in-btn");
+let signUpBtn = document.getElementById("sign-up-btn");
+let UsernameE1 = document.getElementById("usersignup");
+let passwordE1 = document.getElementById("Userpassword");
+let passwordC = document.getElementById("passwordC");
+let usernameE2 = document.getElementById("userlogin");
+let passwordE2 = document.getElementById("passlogin");
 
 // SIGN UP BTN CLICKED
-signUpBtn.addEventListener('click', signUpHandler);
+signUpBtn.addEventListener("click", signUpHandler);
 
 function signUpHandler() {
-  Users.push(newuser(UsernameE1.value,passwordE1.value))
+  
+  if (indexofuser(UsernameE1.value) === )
+  Users.push(newuser(UsernameE1.value, passwordE1.value));
+  saveusers();
 }
 
 // SIGN IN BTN CLICKED
-signInBtn.addEventListener('click', signInHandler);
+signInBtn.addEventListener("click", signInHandler);
 
 function signInHandler() {
-  console.log('Sign In Btn Clicked');
+  console.log("Sign In Btn Clicked");
 }
 
-function newuser(username,password) {
+function newuser(username, password) {
   return {
-  user: username,
-  pass: password,
-  }
+    user: username,
+    pass: password,
+  };
 }
-console.log(Users)
+function saveusers() {
+  localStorage.setItem("Users", JSON.stringify(Users));
+}
+function loadUser() {
+  let userstr = localStorage.getItem("Users");
+  return JSON.parse(userstr) ?? [];
+}
+console.log(Users);
+
+function indexofuser(Username) {
+  for (let i = 0; i < Users.length; i++) {
+    if (Users[i].user === Username) {
+      return i;
+    }
+  }
+  return -1;
+}
