@@ -24,6 +24,7 @@ function signUpHandler() {
 // SIGN IN BTN CLICKED
 signInBtn.addEventListener("click", signInHandler);
 
+//by some miracle of god this works 
 function signInHandler() {
   if (indexofuser(usernameE2.value) > -1) {
      if (indexofpass(passwordE2.value) > -1){ alert("signed in")
