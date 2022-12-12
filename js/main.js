@@ -14,9 +14,11 @@ signUpBtn.addEventListener("click", signUpHandler);
 
 function signUpHandler() {
   
-  if (indexofuser(UsernameE1.value) === )
+  if (indexofuser(UsernameE1.value) ===  -1 ) {
   Users.push(newuser(UsernameE1.value, passwordE1.value));
   saveusers();
+  } else { alert("name already taken")
+}
 }
 
 // SIGN IN BTN CLICKED
