@@ -25,7 +25,11 @@ function signUpHandler() {
 signInBtn.addEventListener("click", signInHandler);
 
 function signInHandler() {
-  console.log("Sign In Btn Clicked");
+  if (indexofuser(usernameE2.value) > -1) {
+     if (indexofpass(passwordE2.value) > -1){ alert("signed in")
+    }else {alert ("incorrect password or user")
+  }
+  } else { alert("incorrect password or user")}
 }
 
 function newuser(username, password) {
@@ -46,6 +50,14 @@ console.log(Users);
 function indexofuser(Username) {
   for (let i = 0; i < Users.length; i++) {
     if (Users[i].user === Username) {
+      return i;
+    }
+  }
+  return -1;
+}
+function indexofpass(password) {
+  for (let i = 0; i < Users.length; i++) {
+    if (Users[i].pass === password) {
       return i;
     }
   }
