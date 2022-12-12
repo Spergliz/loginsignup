@@ -14,9 +14,10 @@ signUpBtn.addEventListener("click", signUpHandler);
 
 function signUpHandler() {
   //also by some miracle of god this mess works
+  // i would add the if(area blank){alert"needs *Area* filled" but the code would be WAY too messy }
   if (indexofuser(UsernameE1.value) ===  -1 )  
-  { if(passwordC.value === passwordE1.value) {
-  Users.push(newuser(UsernameE1.value, passwordE1.value));
+  { if(passwordC.value === passwordE1.value) 
+    { Users.push(newuser(UsernameE1.value, passwordE1.value));
   saveusers();
   } else{alert("passwords do not match")} 
 } else {alert("name already taken")}
