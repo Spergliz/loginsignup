@@ -13,14 +13,14 @@ let passwordE2 = document.getElementById("passlogin");
 signUpBtn.addEventListener("click", signUpHandler);
 
 function signUpHandler() {
-  
-  if (indexofuser(UsernameE1.value) ===  -1 ) {
+  //also by some miracle of god this mess works
+  if (indexofuser(UsernameE1.value) ===  -1 )  
+  { if(passwordC.value === passwordE1.value) {
   Users.push(newuser(UsernameE1.value, passwordE1.value));
   saveusers();
-  } else { alert("name already taken")
+  } else{alert("passwords do not match")} 
+} else {alert("name already taken")}
 }
-}
-
 // SIGN IN BTN CLICKED
 signInBtn.addEventListener("click", signInHandler);
 
